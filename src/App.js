@@ -1,12 +1,13 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGraduationCap, FaCode, FaBriefcase, FaTrophy, FaLanguage, FaHeart, FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaDatabase, FaGitAlt, FaNodeJs, FaBootstrap, FaDownload } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGraduationCap, FaCode, FaBriefcase, FaTrophy, FaLanguage, FaHeart, FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaDatabase, FaGitAlt, FaNodeJs, FaBootstrap, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
 import { SiFlutter, SiCplusplus, SiMongodb, SiExpress, SiRedux, SiC, SiFirebase } from 'react-icons/si';
 import emailjs from '@emailjs/browser';
 import './App.css';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -91,20 +92,35 @@ function App() {
     });
   };
   
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleNavClick = (sectionId) => {
+    scrollToSection(sectionId);
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className="App">
       <header>
-        <div className="logo">NS</div>
-        <nav>
+        <div className="logo">
+          <span className="logo-text">NS</span>
+          <span className="logo-dot">.</span>
+        </div>
+        <button className="menu-btn" onClick={toggleMenu}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+        <nav className={isMenuOpen ? 'active' : ''}>
           <ul>
-            <li><a onClick={() => scrollToSection('home')} className={activeSection === 'home' ? 'active' : ''}>Home</a></li>
-            <li><a onClick={() => scrollToSection('about')} className={activeSection === 'about' ? 'active' : ''}>About</a></li>
-            <li><a onClick={() => scrollToSection('education')} className={activeSection === 'education' ? 'active' : ''}>Education</a></li>
-            <li><a onClick={() => scrollToSection('projects')} className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
-            <li><a onClick={() => scrollToSection('skills')} className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
-            <li><a onClick={() => scrollToSection('achievements')} className={activeSection === 'achievements' ? 'active' : ''}>Achievements</a></li>
-            <li><a onClick={() => scrollToSection('services')} className={activeSection === 'services' ? 'active' : ''}>Services</a></li>
-            <li><a onClick={() => scrollToSection('contact')} className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
+            <li><a onClick={() => handleNavClick('home')} className={activeSection === 'home' ? 'active' : ''}>Home</a></li>
+            <li><a onClick={() => handleNavClick('about')} className={activeSection === 'about' ? 'active' : ''}>About</a></li>
+            <li><a onClick={() => handleNavClick('education')} className={activeSection === 'education' ? 'active' : ''}>Education</a></li>
+            <li><a onClick={() => handleNavClick('projects')} className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
+            <li><a onClick={() => handleNavClick('skills')} className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
+            <li><a onClick={() => handleNavClick('achievements')} className={activeSection === 'achievements' ? 'active' : ''}>Achievements</a></li>
+            <li><a onClick={() => handleNavClick('services')} className={activeSection === 'services' ? 'active' : ''}>Services</a></li>
+            <li><a onClick={() => handleNavClick('contact')} className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
           </ul>
         </nav>
       </header>

@@ -111,12 +111,56 @@ header {
 
 .logo {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.2rem;
   font-weight: 700;
   cursor: pointer;
   color: var(--primary);
   letter-spacing: 1px;
   margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.logo-text {
+  font-size: 2.2rem;
+  background: linear-gradient(45deg, var(--primary), #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.logo-dot {
+  font-size: 2.2rem;
+  color: var(--primary);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.logo:hover .logo-text {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .logo-text, .logo-dot {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo-text, .logo-dot {
+    font-size: 1.5rem;
+  }
 }
 
 nav {
@@ -173,6 +217,71 @@ nav ul li a.active::after {
 
 nav ul li a.active {
   color: var(--primary);
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--bg);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 5rem 2rem;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  nav ul li {
+    margin: 0;
+    width: 100%;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    width: 85%;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
 }
 
 .theme-toggle {
