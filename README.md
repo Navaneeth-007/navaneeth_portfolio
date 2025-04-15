@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Navaneeth's Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website showcasing my skills, projects, and professional journey. Built with React and styled with CSS, this portfolio features a sleek dark theme with gold accents and smooth animations.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- **Modern Design**: Clean, professional dark theme with gold accents
+- **Responsive Layout**: Fully responsive design that works on all devices
+- **Interactive Elements**: Smooth animations and hover effects
+- **Project Showcase**: Grid layout for projects with "View More" functionality
+- **Skills Visualization**: Interactive skills section with progress bars
+- **Contact Form**: Integrated contact form with EmailJS functionality
+- **Download Resume**: Easy access to download resume
+- **Social Links**: Quick access to GitHub and LinkedIn profiles
 
-### `npm start`
+## 🛠️ Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React.js
+- **Styling**: CSS with custom animations
+- **Icons**: React Icons (Font Awesome, Simple Icons)
+- **Email Service**: EmailJS
+- **Deployment**: GitHub Pages
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📱 Sections
 
-### `npm test`
+1. **Hero Section**: Introduction with social links and call-to-action
+2. **About Me**: Personal introduction and contact details
+3. **Education**: Timeline of educational background
+4. **Projects**: Showcase of key projects with technologies used
+5. **Skills**: 
+   - Technical Skills (HTML, CSS, JavaScript, React, Flutter, etc.)
+   - Soft Skills
+   - Languages
+6. **Achievements**: Notable accomplishments and awards
+7. **Services**: Offered services in web and app development
+8. **Contact**: Contact form and direct contact information
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎨 Design Elements
 
-### `npm run build`
+- Dark theme with gold accents
+- Smooth scroll animations
+- Hover effects on cards and buttons
+- Responsive grid layouts
+- Interactive skill bars
+- Timeline visualization for education
+- Project cards with technology tags
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔗 Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [GitHub Repository](https://github.com/Navaneeth-007/portfolio-website)
+- [Live Website](https://navaneeth-007.github.io/portfolio-website)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📝 Contact
 
-### `npm run eject`
+Feel free to reach out through the contact form on the website or directly at:
+- Email: nsnandanam@gmail.com
+- LinkedIn: [Navaneeth S](https://linkedin.com/in/navaneeth-s-34694021b)
+- GitHub: [Navaneeth-007](https://github.com/Navaneeth-007)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm start
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📄 License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the LICENSE file for details.
