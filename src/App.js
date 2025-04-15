@@ -1,24 +1,19 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaMoon, FaSun, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGraduationCap, FaCode, FaBriefcase, FaTrophy, FaLanguage, FaHeart } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGraduationCap, FaCode, FaBriefcase, FaTrophy, FaLanguage, FaHeart } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 import './App.css';
 
 function App() {
-  const [theme, setTheme] = useState('light');
   const [activeSection, setActiveSection] = useState('home');
-  
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.body.className = newTheme;
-    localStorage.setItem('theme', newTheme);
-  };
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState('');
   
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    document.body.className = savedTheme;
-    
     const handleScroll = () => {
       const sections = document.querySelectorAll('section');
       const scrollPosition = window.scrollY + 100;
@@ -31,10 +26,26 @@ function App() {
           setActiveSection(section.id);
         }
       });
+
+      // Scroll reveal animation
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(reveal => {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveal.getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+          reveal.classList.add('active');
+        }
+      });
     };
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  useEffect(() => {
+    emailjs.init("xXsMlqtJuru6WDxkC"); // Replace with your EmailJS public key
   }, []);
   
   const scrollToSection = (sectionId) => {
@@ -42,8 +53,44 @@ function App() {
     setActiveSection(sectionId);
   };
   
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus('sending');
+
+    try {
+      const response = await emailjs.send(
+        "service_cr7mg2o",
+        "template_7z6yc8a",
+        {
+          to_name: "Navaneeth", // Your name
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          reply_to: formData.email // This ensures replies go to the sender
+        }
+      );
+
+      if (response.status === 200) {
+        setFormStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setFormStatus(''), 3000);
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setFormStatus('error');
+      setTimeout(() => setFormStatus(''), 3000);
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+  
   return (
-    <div className={`App ${theme}`}>
+    <div className="App">
       <header>
         <div className="logo">NS</div>
         <nav>
@@ -57,9 +104,6 @@ function App() {
             <li><a onClick={() => scrollToSection('contact')} className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
           </ul>
         </nav>
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === 'light' ? <FaMoon /> : <FaSun />}
-        </button>
       </header>
       
       <section id="home" className="hero">
@@ -77,9 +121,9 @@ function App() {
       </section>
       
       <section id="about" className="about">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title reveal">About Me</h2>
         <div className="container">
-          <div className="about-content">
+          <div className="about-content reveal">
             <p>
               I am a passionate and innovative developer with a strong foundation in computer science 
               and hands-on experience in Flutter and React. Currently pursuing a Master of Technology 
@@ -92,15 +136,15 @@ function App() {
               career and deliver outstanding results in a collaborative environment.
             </p>
             <div className="about-details">
-              <div className="detail-item">
+              <div className="detail-item reveal">
                 <FaMapMarkerAlt />
                 <span>Nandanam, Vishavarsserikkara, Mannar, Kerala, PIN: 689622</span>
               </div>
-              <div className="detail-item">
+              <div className="detail-item reveal">
                 <FaPhone />
                 <span>+91 9746744381</span>
               </div>
-              <div className="detail-item">
+              <div className="detail-item reveal">
                 <FaEnvelope />
                 <span>nsnandanam@gmail.com</span>
               </div>
@@ -110,10 +154,10 @@ function App() {
       </section>
       
       <section id="education" className="education">
-        <h2 className="section-title">Education</h2>
+        <h2 className="section-title reveal">Education</h2>
         <div className="container">
           <div className="timeline">
-            <div className="timeline-item">
+            <div className="timeline-item reveal">
               <div className="timeline-icon">
                 <FaGraduationCap />
               </div>
@@ -125,7 +169,7 @@ function App() {
               </div>
             </div>
             
-            <div className="timeline-item">
+            <div className="timeline-item reveal">
               <div className="timeline-icon">
                 <FaGraduationCap />
               </div>
@@ -137,7 +181,7 @@ function App() {
               </div>
             </div>
             
-            <div className="timeline-item">
+            <div className="timeline-item reveal">
               <div className="timeline-icon">
                 <FaGraduationCap />
               </div>
@@ -149,7 +193,7 @@ function App() {
               </div>
             </div>
             
-            <div className="timeline-item">
+            <div className="timeline-item reveal">
               <div className="timeline-icon">
                 <FaGraduationCap />
               </div>
@@ -165,10 +209,10 @@ function App() {
       </section>
       
       <section id="projects" className="projects">
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title reveal">Projects</h2>
         <div className="container">
           <div className="project-cards">
-            <div className="project-card">
+            <div className="project-card reveal">
               <div className="project-header">
                 <h3>E-Commerce Platform</h3>
                 <div className="project-tech">React | Firebase</div>
@@ -181,7 +225,7 @@ function App() {
               </div>
             </div>
             
-            <div className="project-card">
+            <div className="project-card reveal">
               <div className="project-header">
                 <h3>Application for Blood Donation Management</h3>
                 <div className="project-tech">Flutter | Firebase</div>
@@ -194,7 +238,7 @@ function App() {
               </div>
             </div>
             
-            <div className="project-card">
+            <div className="project-card reveal">
               <div className="project-header">
                 <h3>Voxel Web Reader</h3>
                 <div className="project-tech">JavaScript | HTML | CSS | Python</div>
@@ -211,10 +255,10 @@ function App() {
       </section>
       
       <section id="skills" className="skills">
-        <h2 className="section-title">Skills</h2>
+        <h2 className="section-title reveal">Skills</h2>
         <div className="container">
           <div className="skills-container">
-            <div className="skills-category">
+            <div className="skills-category reveal">
               <h3>Technical Skills</h3>
               <div className="skill-grid">
                 <div className="skill-item">
@@ -274,7 +318,7 @@ function App() {
               </div>
             </div>
             
-            <div className="skills-category">
+            <div className="skills-category reveal">
               <h3>Soft Skills</h3>
               <div className="soft-skills">
                 <div className="soft-skill">Leadership</div>
@@ -284,7 +328,7 @@ function App() {
               </div>
             </div>
             
-            <div className="skills-category">
+            <div className="skills-category reveal">
               <h3>Languages</h3>
               <div className="languages">
                 <div className="language">
@@ -306,9 +350,9 @@ function App() {
       </section>
       
       <section id="achievements" className="achievements">
-        <h2 className="section-title">Achievements</h2>
+        <h2 className="section-title reveal">Achievements</h2>
         <div className="container">
-          <div className="achievement-item">
+          <div className="achievement-item reveal">
             <div className="achievement-icon">
               <FaTrophy />
             </div>
@@ -320,23 +364,13 @@ function App() {
         </div>
         
         <div className="interests">
-          <h3>Interests</h3>
+          <h3 className="reveal">Interests</h3>
           <div className="interest-items">
-            <div className="interest-item">
-              <span>Travelling</span>
-            </div>
-            <div className="interest-item">
-              <span>Philately</span>
-            </div>
-            <div className="interest-item">
-              <span>Numismatics</span>
-            </div>
-            <div className="interest-item">
-              <span>Web Development</span>
-            </div>
-            <div className="interest-item">
-              <span>App Development</span>
-            </div>
+            <div className="interest-item reveal">Travelling</div>
+            <div className="interest-item reveal">Philately</div>
+            <div className="interest-item reveal">Numismatics</div>
+            <div className="interest-item reveal">Web Development</div>
+            <div className="interest-item reveal">App Development</div>
           </div>
         </div>
       </section>
@@ -365,20 +399,49 @@ function App() {
             </div>
             
             <div className="contact-form">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="name">Name</label>
-                  <input type="text" id="name" name="name" required />
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
-                  <input type="email" id="email" name="email" required />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="message">Message</label>
-                  <textarea id="message" name="message" rows="5" required></textarea>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  ></textarea>
                 </div>
-                <button type="submit" className="submit-button">Send Message</button>
+                <button type="submit" className="submit-button">
+                  {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
+                </button>
+                {formStatus === 'success' && (
+                  <p className="form-status success">Message sent successfully!</p>
+                )}
+                {formStatus === 'error' && (
+                  <p className="form-status error">Failed to send message. Please try again.</p>
+                )}
               </form>
             </div>
           </div>
