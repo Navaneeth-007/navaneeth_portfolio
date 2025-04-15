@@ -1,6 +1,7 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGraduationCap, FaCode, FaBriefcase, FaTrophy, FaLanguage, FaHeart } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGraduationCap, FaCode, FaBriefcase, FaTrophy, FaLanguage, FaHeart, FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaDatabase, FaGitAlt, FaNodeJs, FaBootstrap, FaDownload } from 'react-icons/fa';
+import { SiFlutter, SiCplusplus, SiMongodb, SiExpress, SiRedux } from 'react-icons/si';
 import emailjs from '@emailjs/browser';
 import './App.css';
 
@@ -258,90 +259,108 @@ function App() {
         <h2 className="section-title reveal">Skills</h2>
         <div className="container">
           <div className="skills-container">
-            <div className="skills-category reveal">
+            <div className="technical-skills reveal">
               <h3>Technical Skills</h3>
               <div className="skill-grid">
                 <div className="skill-item">
-                  <div className="skill-name">C</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '85%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-name">JAVA</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '80%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
+                  <div className="skill-icon"><FaHtml5 /></div>
                   <div className="skill-name">HTML</div>
                   <div className="skill-bar">
                     <div className="skill-level" style={{ width: '90%' }}></div>
                   </div>
                 </div>
                 <div className="skill-item">
+                  <div className="skill-icon"><FaCss3Alt /></div>
                   <div className="skill-name">CSS</div>
                   <div className="skill-bar">
                     <div className="skill-level" style={{ width: '85%' }}></div>
                   </div>
                 </div>
                 <div className="skill-item">
-                  <div className="skill-name">JAVASCRIPT</div>
+                  <div className="skill-icon"><FaJs /></div>
+                  <div className="skill-name">JavaScript</div>
                   <div className="skill-bar">
                     <div className="skill-level" style={{ width: '80%' }}></div>
                   </div>
                 </div>
                 <div className="skill-item">
+                  <div className="skill-icon"><FaReact /></div>
+                  <div className="skill-name">React</div>
+                  <div className="skill-bar">
+                    <div className="skill-level" style={{ width: '85%' }}></div>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-icon"><SiFlutter /></div>
+                  <div className="skill-name">Flutter</div>
+                  <div className="skill-bar">
+                    <div className="skill-level" style={{ width: '80%' }}></div>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-icon"><FaPython /></div>
+                  <div className="skill-name">Python</div>
+                  <div className="skill-bar">
+                    <div className="skill-level" style={{ width: '75%' }}></div>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-icon"><FaJava /></div>
+                  <div className="skill-name">Java</div>
+                  <div className="skill-bar">
+                    <div className="skill-level" style={{ width: '80%' }}></div>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-icon"><SiCplusplus /></div>
+                  <div className="skill-name">C++</div>
+                  <div className="skill-bar">
+                    <div className="skill-level" style={{ width: '85%' }}></div>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-icon"><FaDatabase /></div>
                   <div className="skill-name">SQL</div>
                   <div className="skill-bar">
                     <div className="skill-level" style={{ width: '75%' }}></div>
                   </div>
                 </div>
                 <div className="skill-item">
-                  <div className="skill-name">REACT</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '85%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-name">FLUTTER</div>
+                  <div className="skill-icon"><FaGitAlt /></div>
+                  <div className="skill-name">Git</div>
                   <div className="skill-bar">
                     <div className="skill-level" style={{ width: '80%' }}></div>
                   </div>
                 </div>
-                <div className="skill-item">
-                  <div className="skill-name">PYTHON</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '75%' }}></div>
+              </div>
+            </div>
+            
+            <div className="bottom-row">
+              <div className="soft-skills-container reveal">
+                <h3>Soft Skills</h3>
+                <div className="soft-skills">
+                  <div className="soft-skill">Leadership</div>
+                  <div className="soft-skill">Adaptability</div>
+                  <div className="soft-skill">Time Management</div>
+                  <div className="soft-skill">Self Assessment</div>
+                </div>
+              </div>
+              
+              <div className="languages-container reveal">
+                <h3>Languages</h3>
+                <div className="languages">
+                  <div className="language">
+                    <h4>Malayalam</h4>
+                    <p>Native or Bilingual Proficiency</p>
                   </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="skills-category reveal">
-              <h3>Soft Skills</h3>
-              <div className="soft-skills">
-                <div className="soft-skill">Leadership</div>
-                <div className="soft-skill">Adaptability</div>
-                <div className="soft-skill">Time Management</div>
-                <div className="soft-skill">Self Assessment</div>
-              </div>
-            </div>
-            
-            <div className="skills-category reveal">
-              <h3>Languages</h3>
-              <div className="languages">
-                <div className="language">
-                  <h4>Malayalam</h4>
-                  <p>Native or Bilingual Proficiency</p>
-                </div>
-                <div className="language">
-                  <h4>English</h4>
-                  <p>Full Professional Proficiency</p>
-                </div>
-                <div className="language">
-                  <h4>Hindi</h4>
-                  <p>Professional Working Proficiency</p>
+                  <div className="language">
+                    <h4>English</h4>
+                    <p>Full Professional Proficiency</p>
+                  </div>
+                  <div className="language">
+                    <h4>Hindi</h4>
+                    <p>Professional Working Proficiency</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -396,6 +415,9 @@ function App() {
                 <a href="https://github.com/Navaneeth-007" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
                 <a href="https://linkedin.com/in/navaneeth-s-34694021b" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
               </div>
+              <a href="/path-to-your-resume.pdf" download className="resume-download">
+                <FaDownload /> Download Resume
+              </a>
             </div>
             
             <div className="contact-form">
