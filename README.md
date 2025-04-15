@@ -48,7 +48,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and profe
 ## 🔗 Links
 
 - [GitHub Repository](https://github.com/Navaneeth-007/portfolio-website)
-- [Live Website](https://navaneeth-007.github.io/portfolio-website)
+- [Live Website](https://navaneeth-portfolio-ebon.vercel.app/))
 
 ## 📝 Contact
 
