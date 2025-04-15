@@ -1,7 +1,7 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGraduationCap, FaCode, FaBriefcase, FaTrophy, FaLanguage, FaHeart, FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaDatabase, FaGitAlt, FaNodeJs, FaBootstrap, FaDownload } from 'react-icons/fa';
-import { SiFlutter, SiCplusplus, SiMongodb, SiExpress, SiRedux } from 'react-icons/si';
+import { SiFlutter, SiCplusplus, SiMongodb, SiExpress, SiRedux, SiC, SiFirebase } from 'react-icons/si';
 import emailjs from '@emailjs/browser';
 import './App.css';
 
@@ -102,6 +102,7 @@ function App() {
             <li><a onClick={() => scrollToSection('projects')} className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
             <li><a onClick={() => scrollToSection('skills')} className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
             <li><a onClick={() => scrollToSection('achievements')} className={activeSection === 'achievements' ? 'active' : ''}>Achievements</a></li>
+            <li><a onClick={() => scrollToSection('services')} className={activeSection === 'services' ? 'active' : ''}>Services</a></li>
             <li><a onClick={() => scrollToSection('contact')} className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
           </ul>
         </nav>
@@ -111,7 +112,7 @@ function App() {
         <div className="hero-content">
           <h1>Navaneeth S</h1>
           <h2>Software Developer</h2>
-          <p>Passionate and innovative developer with expertise in Flutter and React</p>
+          <p>Passionate and Innovative Developer with Expertise in App and Web Development</p>
           <div className="social-links">
             <a href="https://github.com/Navaneeth-007" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
             <a href="https://linkedin.com/in/navaneeth-s-34694021b" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
@@ -124,31 +125,34 @@ function App() {
       <section id="about" className="about">
         <h2 className="section-title reveal">About Me</h2>
         <div className="container">
-          <div className="about-content reveal">
-            <p>
-              I am a passionate and innovative developer with a strong foundation in computer science 
-              and hands-on experience in Flutter and React. Currently pursuing a Master of Technology 
-              in CSE with a focus on AI and ML at Amrita School of Computing.
-            </p>
-            <p>
-              I am seeking a dynamic position in a leading engineering firm to leverage my technical 
-              skills and educational background, while contributing to the organization's success with 
-              exceptional solutions and problem-solving capabilities. I am eager to build a long-term 
-              career and deliver outstanding results in a collaborative environment.
-            </p>
-            <div className="about-details">
-              <div className="detail-item reveal">
-                <FaMapMarkerAlt />
-                <span>Nandanam, Vishavarsserikkara, Mannar, Kerala, PIN: 689622</span>
+          <div className="about-wrapper">
+            <div className="about-content reveal">
+              <p>
+              I am a passionate and innovative developer with a strong foundation in computer science and hands-on experience in Flutter and React. Currently pursuing a Master of Technology in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at Amrita School of Computing, I constantly seek opportunities to apply cutting-edge technologies to real-world problems.
+              </p>
+              <p>
+              I am looking for a dynamic position in a leading engineering firm where I can leverage my technical skills and academic background to contribute to meaningful projects. With a keen eye for detail and a drive for excellence, I aim to deliver exceptional solutions that make a difference. I'm eager to grow in a collaborative environment and build a long-term career in the tech industry.
+              </p>
+              <p>
+              Feel free to reach out to me for freelance projects, collaborations, or any innovative tech ideas you'd like to bring to life. I'm always excited to work with passionate individuals and teams to create impactful digital solutions.
+              </p>
+              <div className="about-details">
+                <div className="detail-item reveal">
+                  <FaMapMarkerAlt />
+                  <span>Nandanam, Vishavarsserikkara, Mannar, Kerala, Pin: 689622</span>
+                </div>
+                <div className="detail-item reveal">
+                  <FaPhone />
+                  <span>+91 9746744381</span>
+                </div>
+                <div className="detail-item reveal">
+                  <FaEnvelope />
+                  <span>nsnandanam@gmail.com</span>
+                </div>
               </div>
-              <div className="detail-item reveal">
-                <FaPhone />
-                <span>+91 9746744381</span>
-              </div>
-              <div className="detail-item reveal">
-                <FaEnvelope />
-                <span>nsnandanam@gmail.com</span>
-              </div>
+            </div>
+            <div className="profile-image reveal">
+              <img src="/assets/profile.jpg" alt="Navaneeth S" />
             </div>
           </div>
         </div>
@@ -166,7 +170,6 @@ function App() {
                 <h3>Master of Technology in CSE with AI and ML</h3>
                 <h4>Amrita School of Computing, Amritapuri</h4>
                 <p>2024 - Present</p>
-                <p>CGPA: 8.8</p>
               </div>
             </div>
             
@@ -178,7 +181,6 @@ function App() {
                 <h3>Bachelor of Technology in Computer Science and Engineering</h3>
                 <h4>College of Engineering, Kallooppara</h4>
                 <p>2020 - 2024</p>
-                <p>CGPA: 7.68, KTU</p>
               </div>
             </div>
             
@@ -190,7 +192,6 @@ function App() {
                 <h3>Senior Secondary Education</h3>
                 <h4>Placid Vidya Vihar, Changanassery</h4>
                 <p>2020</p>
-                <p>Percentage: 80.2%, CBSE</p>
               </div>
             </div>
             
@@ -202,7 +203,6 @@ function App() {
                 <h3>Secondary Education</h3>
                 <h4>SBHSS, Mannar</h4>
                 <p>2018</p>
-                <p>Percentage: 92.2%, CBSE</p>
               </div>
             </div>
           </div>
@@ -215,40 +215,68 @@ function App() {
           <div className="project-cards">
             <div className="project-card reveal">
               <div className="project-header">
-                <h3>E-Commerce Platform</h3>
+                <h3>Shopoholic - E-Commerce Platform</h3>
                 <div className="project-tech">React | Firebase</div>
               </div>
               <p>
                 Implemented a user-friendly e-commerce platform that provides a personalized user experience with data security.
               </p>
               <div className="project-links">
-                <a href="#" className="project-link">View Project</a>
+                <a href="https://arjun-sreekumar.github.io/shopoholic--Ecommerce-platform" className="project-link">View Project</a>
               </div>
             </div>
             
             <div className="project-card reveal">
               <div className="project-header">
-                <h3>Application for Blood Donation Management</h3>
+                <h3>Blood Link - Application for Blood Donation Management</h3>
                 <div className="project-tech">Flutter | Firebase</div>
               </div>
               <p>
                 Developed a user-friendly app that provides a platform to donate and request blood easily.
               </p>
               <div className="project-links">
-                <a href="#" className="project-link">View Project</a>
+                <a href="https://github.com/cs-48/blood_link" className="project-link">View Project</a>
               </div>
             </div>
             
             <div className="project-card reveal">
               <div className="project-header">
                 <h3>Voxel Web Reader</h3>
-                <div className="project-tech">JavaScript | HTML | CSS | Python</div>
+                <div className="project-tech">JavaScript | HTML | CSS | Python| YOLO </div>
               </div>
               <p>
                 Developed a voice-controlled web reader extension for web browsers with YOLO-powered image description.
               </p>
               <div className="project-links">
-                <a href="#" className="project-link">View Project</a>
+                <a href="https://github.com/Navaneeth-007/Voxel_Web_Reader" className="project-link">View Project</a>
+              </div>
+            </div>
+
+            <div className="last-projects-container">
+              <div className="project-card reveal">
+                <div className="project-header">
+                  <h3>SignAI - Real-time Sign Language Interpretation</h3>
+                  <div className="project-tech">HTML |CSS |JavaScript |Python | Mediapipe </div>
+                </div>
+                <p>
+                  Developed a real-time video calling application with integrated sign language recognition using machine learning to convert gestures into text and speech.
+                </p>
+                <div className="project-links">
+                  <a href="https://github.com/Navaneeth-007/SignAI" className="project-link">View Project</a>
+                </div>
+              </div>
+
+              <div className="project-card reveal">
+                <div className="project-header">
+                  <h3>Stock Price Prediction App</h3>
+                  <div className="project-tech">Streamlit | Python | LSTM</div>
+                </div>
+                <p>
+                  Built a Streamlit application for predicting stock prices using an LSTM (Long Short-Term Memory) neural network.
+                </p>
+                <div className="project-links">
+                  <a href="https://github.com/Navaneeth-007/Stock_Price_prediction" className="project-link">View Project</a>
+                </div>
               </div>
             </div>
           </div>
@@ -287,49 +315,63 @@ function App() {
                   <div className="skill-icon"><FaReact /></div>
                   <div className="skill-name">React</div>
                   <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '85%' }}></div>
+                    <div className="skill-level" style={{ width: '75%' }}></div>
                   </div>
                 </div>
                 <div className="skill-item">
                   <div className="skill-icon"><SiFlutter /></div>
                   <div className="skill-name">Flutter</div>
                   <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '80%' }}></div>
+                    <div className="skill-level" style={{ width: '75%' }}></div>
                   </div>
                 </div>
                 <div className="skill-item">
                   <div className="skill-icon"><FaPython /></div>
                   <div className="skill-name">Python</div>
                   <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '75%' }}></div>
+                    <div className="skill-level" style={{ width: '55%' }}></div>
                   </div>
                 </div>
                 <div className="skill-item">
                   <div className="skill-icon"><FaJava /></div>
                   <div className="skill-name">Java</div>
                   <div className="skill-bar">
+                    <div className="skill-level" style={{ width: '60%' }}></div>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-icon"><SiC /></div>
+                  <div className="skill-name">C</div>
+                  <div className="skill-bar">
+                    <div className="skill-level" style={{ width: '85%' }}></div>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-icon"><SiFirebase /></div>
+                  <div className="skill-name">Firebase</div>
+                  <div className="skill-bar">
                     <div className="skill-level" style={{ width: '80%' }}></div>
                   </div>
                 </div>
                 <div className="skill-item">
-                  <div className="skill-icon"><SiCplusplus /></div>
-                  <div className="skill-name">C++</div>
+                  <div className="skill-icon"><FaNodeJs /></div>
+                  <div className="skill-name">Node.js</div>
                   <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '85%' }}></div>
+                    <div className="skill-level" style={{ width: '70%' }}></div>
                   </div>
                 </div>
                 <div className="skill-item">
                   <div className="skill-icon"><FaDatabase /></div>
                   <div className="skill-name">SQL</div>
                   <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '75%' }}></div>
+                    <div className="skill-level" style={{ width: '65%' }}></div>
                   </div>
                 </div>
                 <div className="skill-item">
                   <div className="skill-icon"><FaGitAlt /></div>
                   <div className="skill-name">Git</div>
                   <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '80%' }}></div>
+                    <div className="skill-level" style={{ width: '90%' }}></div>
                   </div>
                 </div>
               </div>
@@ -343,6 +385,9 @@ function App() {
                   <div className="soft-skill">Adaptability</div>
                   <div className="soft-skill">Time Management</div>
                   <div className="soft-skill">Self Assessment</div>
+                  <div className="soft-skill">Team Management</div>
+                  <div className="soft-skill">Problem Solving</div>
+                  <div className="soft-skill">Collaboration</div>
                 </div>
               </div>
               
@@ -376,8 +421,28 @@ function App() {
               <FaTrophy />
             </div>
             <div className="achievement-content">
-              <h3>Finalist of "I AM KALAM ALL KERALA SCIENCE EXHIBITION" (2018)</h3>
+              <h3>Finalist of " I AM KALAM ALL KERALA SCIENCE EXHIBITION " (2018)</h3>
               <p>Developed a Salt Water Intrusion Prevention System</p>
+            </div>
+          </div>
+
+          <div className="achievement-item reveal">
+            <div className="achievement-icon">
+              <FaTrophy />
+            </div>
+            <div className="achievement-content">
+              <h3>Finalist of " Kochi Hackathon '25 " (2025)</h3>
+              <p>Developed a Chrome extension for accessible web reading with voice control and AI-driven image descriptions.</p>
+            </div>
+          </div>
+
+          <div className="achievement-item reveal">
+            <div className="achievement-icon">
+              <FaTrophy />
+            </div>
+            <div className="achievement-content">
+              <h3>Finalist of " Tredence Infinity AI Hackathon " (2025)</h3>
+              <p>Developed a real-time video calling application with sign language interpretation capabilities.</p>
             </div>
           </div>
         </div>
@@ -390,6 +455,37 @@ function App() {
             <div className="interest-item reveal">Numismatics</div>
             <div className="interest-item reveal">Web Development</div>
             <div className="interest-item reveal">App Development</div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="services" className="services">
+        <h2 className="section-title reveal">Services</h2>
+        <div className="container">
+          <div className="services-grid">
+            <div className="service-card reveal">
+              <div className="service-icon">
+                <FaCode />
+              </div>
+              <h3>Web Development</h3>
+              <p>Custom web applications built with modern technologies like React, Node.js, and Firebase. Responsive design and seamless user experience guaranteed.</p>
+            </div>
+
+            <div className="service-card reveal">
+              <div className="service-icon">
+                <SiFlutter />
+              </div>
+              <h3>Mobile App Development</h3>
+              <p>Cross-platform mobile applications developed with Flutter. Native-like performance with beautiful UI and smooth animations.</p>
+            </div>
+
+            <div className="service-card reveal">
+              <div className="service-icon">
+                <FaPython />
+              </div>
+              <h3>AI & ML Solutions</h3>
+              <p>Machine learning models and AI-powered features integration. Data analysis and predictive modeling for smart applications.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -409,13 +505,13 @@ function App() {
               </div>
               <div className="contact-item">
                 <FaMapMarkerAlt />
-                <p>Nandanam, Vishavarsserikkara, Mannar, Kerala, PIN: 689622</p>
+                <p>Nandanam, Vishavarsserikkara, Mannar, Kerala, Pin: 689622</p>
               </div>
               <div className="social-links">
                 <a href="https://github.com/Navaneeth-007" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
                 <a href="https://linkedin.com/in/navaneeth-s-34694021b" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
               </div>
-              <a href="/path-to-your-resume.pdf" download className="resume-download">
+              <a href="/assets/Navaneeth.pdf" download className="download-resume">
                 <FaDownload /> Download Resume
               </a>
             </div>
