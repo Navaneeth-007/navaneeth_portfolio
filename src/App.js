@@ -13,6 +13,7 @@ function App() {
     message: ''
   });
   const [formStatus, setFormStatus] = useState('');
+  const [showMore, setShowMore] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -215,17 +216,17 @@ function App() {
           <div className="project-cards">
             <div className="project-card reveal">
               <div className="project-header">
-                <h3>Shopoholic - E-Commerce Platform</h3>
-                <div className="project-tech">React | Firebase</div>
+                <h3>SignAI - Real-time Sign Language Interpretation</h3>
+                <div className="project-tech">HTML |CSS |JavaScript |Python | Mediapipe </div>
               </div>
               <p>
-                Implemented a user-friendly e-commerce platform that provides a personalized user experience with data security.
+                Developed a real-time video calling application with integrated sign language recognition using machine learning to convert gestures into text and speech.
               </p>
               <div className="project-links">
-                <a href="https://arjun-sreekumar.github.io/shopoholic--Ecommerce-platform" className="project-link">View Project</a>
+                <a href="https://github.com/Navaneeth-007/SignAI" className="project-link">View Project</a>
               </div>
             </div>
-            
+
             <div className="project-card reveal">
               <div className="project-header">
                 <h3>Blood Link - Application for Blood Donation Management</h3>
@@ -238,7 +239,7 @@ function App() {
                 <a href="https://github.com/cs-48/blood_link" className="project-link">View Project</a>
               </div>
             </div>
-            
+
             <div className="project-card reveal">
               <div className="project-header">
                 <h3>Voxel Web Reader</h3>
@@ -251,34 +252,40 @@ function App() {
                 <a href="https://github.com/Navaneeth-007/Voxel_Web_Reader" className="project-link">View Project</a>
               </div>
             </div>
+          </div>
 
-            <div className="last-projects-container">
-              <div className="project-card reveal">
-                <div className="project-header">
-                  <h3>SignAI - Real-time Sign Language Interpretation</h3>
-                  <div className="project-tech">HTML |CSS |JavaScript |Python | Mediapipe </div>
-                </div>
-                <p>
-                  Developed a real-time video calling application with integrated sign language recognition using machine learning to convert gestures into text and speech.
-                </p>
-                <div className="project-links">
-                  <a href="https://github.com/Navaneeth-007/SignAI" className="project-link">View Project</a>
-                </div>
+          <div className={`hidden-projects ${showMore ? 'show' : ''}`}>
+            <div className="project-card reveal">
+              <div className="project-header">
+                <h3>Shopoholic - E-Commerce Platform</h3>
+                <div className="project-tech">React | Firebase</div>
               </div>
-
-              <div className="project-card reveal">
-                <div className="project-header">
-                  <h3>Stock Price Prediction App</h3>
-                  <div className="project-tech">Streamlit | Python | LSTM</div>
-                </div>
-                <p>
-                  Built a Streamlit application for predicting stock prices using an LSTM (Long Short-Term Memory) neural network.
-                </p>
-                <div className="project-links">
-                  <a href="https://github.com/Navaneeth-007/Stock_Price_prediction" className="project-link">View Project</a>
-                </div>
+              <p>
+                Implemented a user-friendly e-commerce platform that provides a personalized user experience with data security.
+              </p>
+              <div className="project-links">
+                <a href="https://arjun-sreekumar.github.io/shopoholic--Ecommerce-platform" className="project-link">View Project</a>
               </div>
             </div>
+
+            <div className="project-card reveal">
+              <div className="project-header">
+                <h3>Stock Price Prediction App</h3>
+                <div className="project-tech">Streamlit | Python | LSTM</div>
+              </div>
+              <p>
+                Built a Streamlit application for predicting stock prices using an LSTM (Long Short-Term Memory) neural network.
+              </p>
+              <div className="project-links">
+                <a href="https://github.com/Navaneeth-007/Stock_Price_prediction" className="project-link">View Project</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="view-more-container">
+            <button className="view-more-btn" onClick={() => setShowMore(!showMore)}>
+              {showMore ? 'Show Less' : 'View More Projects'}
+            </button>
           </div>
         </div>
       </section>
