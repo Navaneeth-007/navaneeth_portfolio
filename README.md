@@ -19,7 +19,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and profe
 - **Styling**: CSS with custom animations
 - **Icons**: React Icons (Font Awesome, Simple Icons)
 - **Email Service**: EmailJS
-- **Deployment**: GitHub Pages
+- **Deployment**: Vercel
 
 ## 📱 Sections
 
