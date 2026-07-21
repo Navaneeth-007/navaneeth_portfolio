@@ -128,8 +128,8 @@ function App() {
       <section id="home" className="hero">
         <div className="hero-content">
           <h1>Navaneeth S</h1>
-          <h2>Software Developer</h2>
-          <p>Passionate and Innovative Developer with Expertise in App and Web Development</p>
+          <h2>AI/ML Engineer & Data Scientist</h2>
+          <p>Passionate about creating scalable AI systems that solve real-world challenges.</p>
           <div className="social-links">
             <a href="https://github.com/Navaneeth-007" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
             <a href="https://linkedin.com/in/navaneeth-s-34694021b" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
