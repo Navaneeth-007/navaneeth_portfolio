@@ -1,7 +1,7 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaRobot, FaMapMarkerAlt, FaGraduationCap, FaCode, FaBriefcase, FaTrophy, FaLanguage, FaHeart, FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaDatabase, FaGitAlt, FaNodeJs, FaBootstrap, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
-import { SiFlutter, SiCplusplus, SiMongodb, SiExpress, SiRedux, SiC, SiFirebase } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaRobot, FaMapMarkerAlt, FaGraduationCap, FaCode, FaTrophy, FaReact, FaPython, FaJava, FaDatabase, FaGitAlt, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
+import { SiMongodb, SiFirebase } from 'react-icons/si';
 import {SiPytorch, SiTensorflow, SiScikitlearn, SiLangchain, SiAmazonwebservices} from "react-icons/si";
 import emailjs from '@emailjs/browser';
 import './App.css';
@@ -112,16 +112,97 @@ function App() {
         <button className="menu-btn" onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
-        <nav className={isMenuOpen ? 'active' : ''}>
+         <nav className={isMenuOpen ? 'active' : ''}>
           <ul>
-            <li><a onClick={() => handleNavClick('home')} className={activeSection === 'home' ? 'active' : ''}>Home</a></li>
-            <li><a onClick={() => handleNavClick('about')} className={activeSection === 'about' ? 'active' : ''}>About</a></li>
-            <li><a onClick={() => handleNavClick('education')} className={activeSection === 'education' ? 'active' : ''}>Education</a></li>
-            <li><a onClick={() => handleNavClick('projects')} className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
-            <li><a onClick={() => handleNavClick('skills')} className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
-            <li><a onClick={() => handleNavClick('achievements')} className={activeSection === 'achievements' ? 'active' : ''}>Achievements</a></li>
-            <li><a onClick={() => handleNavClick('services')} className={activeSection === 'services' ? 'active' : ''}>Services</a></li>
-            <li><a onClick={() => handleNavClick('contact')} className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
+            <li>
+              <a
+                href="#home"
+                onClick={() => handleNavClick('home')}
+                className={activeSection === 'home' ? 'active' : ''}
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#about"
+                onClick={() => handleNavClick('about')}
+                className={activeSection === 'about' ? 'active' : ''}
+              >
+                About
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#education"
+                onClick={() => handleNavClick('education')}
+                className={activeSection === 'education' ? 'active' : ''}
+              >
+                Education
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#experience"
+                onClick={() => handleNavClick('experience')}
+                className={activeSection === 'experience' ? 'active' : ''}
+              >
+                Experience
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#projects"
+                onClick={() => handleNavClick('projects')}
+                className={activeSection === 'projects' ? 'active' : ''}
+              >
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#skills"
+                onClick={() => handleNavClick('skills')}
+                className={activeSection === 'skills' ? 'active' : ''}
+              >
+                Skills
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#achievements"
+                onClick={() => handleNavClick('achievements')}
+                className={activeSection === 'achievements' ? 'active' : ''}
+              >
+                Achievements
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#services"
+                onClick={() => handleNavClick('services')}
+                className={activeSection === 'services' ? 'active' : ''}
+              >
+                Services
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#contact"
+                onClick={() => handleNavClick('contact')}
+                className={activeSection === 'contact' ? 'active' : ''}
+              >
+                Contact
+              </a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -223,6 +304,39 @@ function App() {
                 <p>2018</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" className="experience">
+        <h2 className="section-title reveal">Experience</h2>
+
+        <div className="container">
+          <div className="experience-card reveal">
+            <div className="experience-header">
+              <div>
+                <h3>Data Science Intern</h3>
+                <h4>GE Aerospace</h4>
+              </div>
+              <span className="experience-duration">Jan 2026 – Present</span>
+            </div>
+
+            <p className="experience-description">
+              Contributing to enterprise AI and data science initiatives by developing intelligent automation
+              solutions, Generative AI workflows, and forecasting systems for business operations.
+            </p>
+
+            <ul className="experience-list">
+              <li>Developed enterprise-grade Generative AI solutions using Retrieval-Augmented Generation (RAG) and Large Language Models.</li>
+              <li>Built scalable data pipelines and cloud-native AI applications using AWS services.</li>
+              <li>Contributed to AI-driven forecasting solutions for corporate finance and business planning.</li>
+              <li>Collaborated with cross-functional teams to design intelligent automation and data-driven decision support systems.</li>
+              <li>Worked with Python, LangChain, LangGraph, Amazon Bedrock, PostgreSQL (pgvector), AWS Lambda, and Amazon S3.</li>
+            </ul>
+
+            <p className="experience-note">
+              <strong>Note:</strong> Project implementation details are not publicly available due to company confidentiality and compliance requirements.
+            </p>
           </div>
         </div>
       </section>
