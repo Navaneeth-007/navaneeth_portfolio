@@ -145,13 +145,13 @@ function App() {
           <div className="about-wrapper">
             <div className="about-content reveal">
               <p>
-              I am a passionate and innovative developer with a strong foundation in computer science and hands-on experience in Flutter and React. Currently pursuing a Master of Technology in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at Amrita School of Computing, I constantly seek opportunities to apply cutting-edge technologies to real-world problems.
+              I am an AI/ML Engineer and Data Scientist with experience developing production-grade Generative AI applications, machine learning models, and cloud-based solutions. Currently working as a Data Science Intern at GE Aerospace, I build enterprise AI systems using Retrieval-Augmented Generation (RAG), Large Language Models, and AWS technologies to solve real-world business challenges.
               </p>
               <p>
-              I am looking for a dynamic position in a leading engineering firm where I can leverage my technical skills and academic background to contribute to meaningful projects. With a keen eye for detail and a drive for excellence, I aim to deliver exceptional solutions that make a difference. I'm eager to grow in a collaborative environment and build a long-term career in the tech industry.
+              My interests span Generative AI, Deep Learning, Computer Vision, and Intelligent Automation. Alongside industry experience, I have conducted research in SAR-based urban flood segmentation using a novel dual-encoder deep learning architecture, with my work submitted to IEEE Geoscience and Remote Sensing Letters. I enjoy transforming research into scalable, impactful AI solutions.
               </p>
               <p>
-              Feel free to reach out to me for freelance projects, collaborations, or any innovative tech ideas you'd like to bring to life. I'm always excited to work with passionate individuals and teams to create impactful digital solutions.
+              I'm always open to opportunities in AI, Machine Learning, Data Science, and Software Engineering. Whether it's building intelligent applications, collaborating on innovative projects, or exploring emerging AI technologies, I'm excited to create solutions that make a meaningful impact.
               </p>
               <div className="about-details">
                 <div className="detail-item reveal">
@@ -186,7 +186,7 @@ function App() {
               <div className="timeline-content">
                 <h3>Master of Technology in CSE with AI and ML</h3>
                 <h4>Amrita School of Computing, Amritapuri</h4>
-                <p>2024 - Present</p>
+                <p>2024 - 2026</p>
               </div>
             </div>
             
