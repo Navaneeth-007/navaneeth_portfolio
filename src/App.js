@@ -1,7 +1,8 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGraduationCap, FaCode, FaBriefcase, FaTrophy, FaLanguage, FaHeart, FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaDatabase, FaGitAlt, FaNodeJs, FaBootstrap, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
-import { SiFlutter, SiCplusplus, SiMongodb, SiExpress, SiRedux, SiC, SiFirebase } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaRobot, FaMapMarkerAlt, FaGraduationCap, FaCode, FaTrophy, FaReact, FaPython, FaJava, FaDatabase, FaGitAlt, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
+import { SiMongodb, SiFirebase } from 'react-icons/si';
+import {SiPytorch, SiTensorflow, SiScikitlearn, SiLangchain, SiAmazonwebservices} from "react-icons/si";
 import emailjs from '@emailjs/browser';
 import './App.css';
 
@@ -111,16 +112,97 @@ function App() {
         <button className="menu-btn" onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
-        <nav className={isMenuOpen ? 'active' : ''}>
+         <nav className={isMenuOpen ? 'active' : ''}>
           <ul>
-            <li><a onClick={() => handleNavClick('home')} className={activeSection === 'home' ? 'active' : ''}>Home</a></li>
-            <li><a onClick={() => handleNavClick('about')} className={activeSection === 'about' ? 'active' : ''}>About</a></li>
-            <li><a onClick={() => handleNavClick('education')} className={activeSection === 'education' ? 'active' : ''}>Education</a></li>
-            <li><a onClick={() => handleNavClick('projects')} className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
-            <li><a onClick={() => handleNavClick('skills')} className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
-            <li><a onClick={() => handleNavClick('achievements')} className={activeSection === 'achievements' ? 'active' : ''}>Achievements</a></li>
-            <li><a onClick={() => handleNavClick('services')} className={activeSection === 'services' ? 'active' : ''}>Services</a></li>
-            <li><a onClick={() => handleNavClick('contact')} className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
+            <li>
+              <a
+                href="#home"
+                onClick={() => handleNavClick('home')}
+                className={activeSection === 'home' ? 'active' : ''}
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#about"
+                onClick={() => handleNavClick('about')}
+                className={activeSection === 'about' ? 'active' : ''}
+              >
+                About
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#education"
+                onClick={() => handleNavClick('education')}
+                className={activeSection === 'education' ? 'active' : ''}
+              >
+                Education
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#experience"
+                onClick={() => handleNavClick('experience')}
+                className={activeSection === 'experience' ? 'active' : ''}
+              >
+                Experience
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#projects"
+                onClick={() => handleNavClick('projects')}
+                className={activeSection === 'projects' ? 'active' : ''}
+              >
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#skills"
+                onClick={() => handleNavClick('skills')}
+                className={activeSection === 'skills' ? 'active' : ''}
+              >
+                Skills
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#achievements"
+                onClick={() => handleNavClick('achievements')}
+                className={activeSection === 'achievements' ? 'active' : ''}
+              >
+                Achievements
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#services"
+                onClick={() => handleNavClick('services')}
+                className={activeSection === 'services' ? 'active' : ''}
+              >
+                Services
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#contact"
+                onClick={() => handleNavClick('contact')}
+                className={activeSection === 'contact' ? 'active' : ''}
+              >
+                Contact
+              </a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -128,8 +210,8 @@ function App() {
       <section id="home" className="hero">
         <div className="hero-content">
           <h1>Navaneeth S</h1>
-          <h2>Software Developer</h2>
-          <p>Passionate and Innovative Developer with Expertise in App and Web Development</p>
+          <h2>AI/ML Engineer & Data Scientist</h2>
+          <p>Passionate about creating scalable AI systems that solve real-world challenges.</p>
           <div className="social-links">
             <a href="https://github.com/Navaneeth-007" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
             <a href="https://linkedin.com/in/navaneeth-s-34694021b" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
@@ -145,13 +227,13 @@ function App() {
           <div className="about-wrapper">
             <div className="about-content reveal">
               <p>
-              I am a passionate and innovative developer with a strong foundation in computer science and hands-on experience in Flutter and React. Currently pursuing a Master of Technology in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at Amrita School of Computing, I constantly seek opportunities to apply cutting-edge technologies to real-world problems.
+              I am an AI/ML Engineer and Data Scientist with experience developing production-grade Generative AI applications, machine learning models, and cloud-based solutions. Currently working as a Data Science Intern at GE Aerospace, I build enterprise AI systems using Retrieval-Augmented Generation (RAG), Large Language Models, and AWS technologies to solve real-world business challenges.
               </p>
               <p>
-              I am looking for a dynamic position in a leading engineering firm where I can leverage my technical skills and academic background to contribute to meaningful projects. With a keen eye for detail and a drive for excellence, I aim to deliver exceptional solutions that make a difference. I'm eager to grow in a collaborative environment and build a long-term career in the tech industry.
+              My interests span Generative AI, Deep Learning, Computer Vision, and Intelligent Automation. Alongside industry experience, I have conducted research in SAR-based urban flood segmentation using a novel dual-encoder deep learning architecture, with my work submitted to IEEE Geoscience and Remote Sensing Letters. I enjoy transforming research into scalable, impactful AI solutions.
               </p>
               <p>
-              Feel free to reach out to me for freelance projects, collaborations, or any innovative tech ideas you'd like to bring to life. I'm always excited to work with passionate individuals and teams to create impactful digital solutions.
+              I'm always open to opportunities in AI, Machine Learning, Data Science, and Software Engineering. Whether it's building intelligent applications, collaborating on innovative projects, or exploring emerging AI technologies, I'm excited to create solutions that make a meaningful impact.
               </p>
               <div className="about-details">
                 <div className="detail-item reveal">
@@ -186,7 +268,7 @@ function App() {
               <div className="timeline-content">
                 <h3>Master of Technology in CSE with AI and ML</h3>
                 <h4>Amrita School of Computing, Amritapuri</h4>
-                <p>2024 - Present</p>
+                <p>2024 - 2026</p>
               </div>
             </div>
             
@@ -225,6 +307,39 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section id="experience" className="experience">
+        <h2 className="section-title reveal">Experience</h2>
+
+        <div className="container">
+          <div className="experience-card reveal">
+            <div className="experience-header">
+              <div>
+                <h3>Data Science Intern</h3>
+                <h4>GE Aerospace</h4>
+              </div>
+              <span className="experience-duration">Jan 2026 – Present</span>
+            </div>
+
+            <p className="experience-description">
+              Contributing to enterprise AI and data science initiatives by developing intelligent automation
+              solutions, Generative AI workflows, and forecasting systems for business operations.
+            </p>
+
+            <ul className="experience-list">
+              <li>Developed enterprise-grade Generative AI solutions using Retrieval-Augmented Generation (RAG) and Large Language Models.</li>
+              <li>Built scalable data pipelines and cloud-native AI applications using AWS services.</li>
+              <li>Contributed to AI-driven forecasting solutions for corporate finance and business planning.</li>
+              <li>Collaborated with cross-functional teams to design intelligent automation and data-driven decision support systems.</li>
+              <li>Worked with Python, LangChain, LangGraph, Amazon Bedrock, PostgreSQL (pgvector), AWS Lambda, and Amazon S3.</li>
+            </ul>
+
+            <p className="experience-note">
+              <strong>Note:</strong> Project implementation details are not publicly available due to company confidentiality and compliance requirements.
+            </p>
+          </div>
+        </div>
+      </section>
       
       <section id="projects" className="projects">
         <h2 className="section-title reveal">Projects</h2>
@@ -245,15 +360,17 @@ function App() {
 
             <div className="project-card reveal">
               <div className="project-header">
-                <h3>Blood Link - Application for Blood Donation Management</h3>
-                <div className="project-tech">Flutter | Firebase</div>
-              </div>
-              <p>
-                Developed a user-friendly app that provides a platform to donate and request blood easily.
-              </p>
-              <div className="project-links">
-                <a href="https://github.com/cs-48/blood_link" className="project-link">View Project</a>
-              </div>
+                <h3>SETU – GenAI Stadium Operations Assistant</h3>
+              <div className="project-tech">React | Firebase | Gemini API | Gen - AI</div>
+            </div>
+            <p>
+              Built a Generative AI-powered stadium operations assistant for the FIFA World Cup 2026 to improve crowd management, automate emergency response, and provide real-time operational insights for stadium staff and spectators.
+            </p>
+            <div className="project-links">
+            <a href="https://github.com/Navaneeth-007/Setu-Assistant" className="project-link">
+              View Project
+            </a>
+            </div>
             </div>
 
             <div className="project-card reveal">
@@ -262,7 +379,7 @@ function App() {
                 <div className="project-tech">JavaScript | HTML | CSS | Python| YOLO </div>
               </div>
               <p>
-                Developed a voice-controlled web reader extension for web browsers with YOLO-powered image description.
+                Developed an AI-powered voice-controlled web reader extension featuring YOLO-based image description to make web content more accessible for visually impaired users.
               </p>
               <div className="project-links">
                 <a href="https://github.com/Navaneeth-007/Voxel_Web_Reader" className="project-link">View Project</a>
@@ -271,32 +388,35 @@ function App() {
           </div>
 
           <div className={`hidden-projects ${showMore ? 'show' : ''}`}>
-            <div className="project-card reveal">
-              <div className="project-header">
-                <h3>Shopoholic - E-Commerce Platform</h3>
-                <div className="project-tech">React | Firebase</div>
-              </div>
-              <p>
-                Implemented a user-friendly e-commerce platform that provides a personalized user experience with data security.
-              </p>
-              <div className="project-links">
-                <a href="https://arjun-sreekumar.github.io/shopoholic--Ecommerce-platform" className="project-link">View Project</a>
-              </div>
+          <div className="project-card reveal">
+            <div className="project-header">
+              <h3>Smart Chef – AI Recipe Assistant</h3>
+              <div className="project-tech">React | Gemini API | Firebase</div>
             </div>
-
-            <div className="project-card reveal">
-              <div className="project-header">
-                <h3>Stock Price Prediction App</h3>
-                <div className="project-tech">Streamlit | Python | LSTM</div>
-              </div>
               <p>
-                Built a Streamlit application for predicting stock prices using an LSTM (Long Short-Term Memory) neural network.
+               Developed an AI-powered recipe assistant that generates personalized recipes based on available ingredients, dietary preferences, and cuisine choices using Generative AI.
               </p>
-              <div className="project-links">
-                <a href="https://github.com/Navaneeth-007/Stock_Price_prediction" className="project-link">View Project</a>
-              </div>
+            <div className="project-links">
+              <a href="https://github.com/Navaneeth-007/Smart-Chef" className="project-link">
+                View Project
+              </a>
+            </div>
+            </div>
+          <div className="project-card reveal">
+            <div className="project-header">
+              <h3>SmartFin – AI Personal Finance Assistant</h3>
+              <div className="project-tech">Python | Flask | MongoDB | LSTM</div>
+            </div>
+            <p>
+              Built an AI-powered personal finance assistant that forecasts spending patterns using LSTM models and provides interactive dashboards for financial insights and expense analysis.
+            </p>
+            <div className="project-links">
+              <a href="https://github.com/Navaneeth-007/SmartFin" className="project-link">
+                View Project
+              </a>
             </div>
           </div>
+        </div>
 
           <div className="view-more-container">
             <button className="view-more-btn" onClick={() => setShowMore(!showMore)}>
@@ -314,89 +434,89 @@ function App() {
               <h3>Technical Skills</h3>
               <div className="skill-grid">
                 <div className="skill-item">
-                  <div className="skill-icon"><FaHtml5 /></div>
-                  <div className="skill-name">HTML</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '90%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-icon"><FaCss3Alt /></div>
-                  <div className="skill-name">CSS</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '85%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-icon"><FaJs /></div>
-                  <div className="skill-name">JavaScript</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '80%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-icon"><FaReact /></div>
-                  <div className="skill-name">React</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '75%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-icon"><SiFlutter /></div>
-                  <div className="skill-name">Flutter</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '75%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
                   <div className="skill-icon"><FaPython /></div>
                   <div className="skill-name">Python</div>
                   <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '55%' }}></div>
+                  <div className="skill-level" style={{ width: '95%' }}></div>
                   </div>
                 </div>
+              <div className="skill-item">
+                <div className="skill-icon"><FaJava /></div>
+                <div className="skill-name">Java</div>
+                <div className="skill-bar">
+                <div className="skill-level" style={{ width: '80%' }}></div>
+                </div>
+              </div>
+              <div className="skill-item">
+                <div className="skill-icon"><FaReact /></div>
+                <div className="skill-name">React</div>
+                <div className="skill-bar">
+                <div className="skill-level" style={{ width: '85%' }}></div>
+                </div>
+              </div>  
                 <div className="skill-item">
-                  <div className="skill-icon"><FaJava /></div>
-                  <div className="skill-name">Java</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '60%' }}></div>
-                  </div>
+                <div className="skill-icon"><SiPytorch /></div>
+                <div className="skill-name">PyTorch</div>
+                <div className="skill-bar">
+                <div className="skill-level" style={{ width: '90%' }}></div>
                 </div>
-                <div className="skill-item">
-                  <div className="skill-icon"><SiC /></div>
-                  <div className="skill-name">C</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '85%' }}></div>
-                  </div>
+              </div>
+              <div className="skill-item">
+                <div className="skill-icon"><SiTensorflow /></div>
+                <div className="skill-name">TensorFlow</div>
+                <div className="skill-bar">
+                <div className="skill-level" style={{ width: '80%' }}></div>
                 </div>
-                <div className="skill-item">
-                  <div className="skill-icon"><SiFirebase /></div>
-                  <div className="skill-name">Firebase</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '80%' }}></div>
-                  </div>
+              </div>
+              <div className="skill-item">
+                <div className="skill-icon"><SiScikitlearn /></div>
+                <div className="skill-name">Scikit-learn</div>
+                <div className="skill-bar">
+                <div className="skill-level" style={{ width: '85%' }}></div>
                 </div>
-                <div className="skill-item">
-                  <div className="skill-icon"><FaNodeJs /></div>
-                  <div className="skill-name">Node.js</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '70%' }}></div>
-                  </div>
+              </div>
+              <div className="skill-item">
+                <div className="skill-icon"><SiLangchain /></div>
+                <div className="skill-name">LangChain</div>
+                <div className="skill-bar">
+                <div className="skill-level" style={{ width: '90%' }}></div>
                 </div>
-                <div className="skill-item">
-                  <div className="skill-icon"><FaDatabase /></div>
-                  <div className="skill-name">SQL</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '65%' }}></div>
-                  </div>
+              </div>
+              <div className="skill-item">
+                <div className="skill-icon"><SiAmazonwebservices /></div>
+                <div className="skill-name">AWS</div>
+                <div className="skill-bar">
+                <div className="skill-level" style={{ width: '85%' }}></div>
                 </div>
-                <div className="skill-item">
-                  <div className="skill-icon"><FaGitAlt /></div>
-                  <div className="skill-name">Git</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '90%' }}></div>
-                  </div>
+              </div>
+              <div className="skill-item">
+                <div className="skill-icon"><FaDatabase /></div>
+                <div className="skill-name">PostgreSQL</div>
+                <div className="skill-bar">
+                <div className="skill-level" style={{ width: '85%' }}></div>
+              </div>
+              </div>
+              <div className="skill-item">
+                <div className="skill-icon"><SiMongodb /></div>
+                <div className="skill-name">MongoDB</div>
+                <div className="skill-bar">
+                <div className="skill-level" style={{ width: '80%' }}></div>
                 </div>
+              </div>
+              <div className="skill-item">
+                <div className="skill-icon"><SiFirebase /></div>
+                <div className="skill-name">Firebase</div>
+                <div className="skill-bar">
+                  <div className="skill-level" style={{ width: '80%' }}></div>
+                </div>
+              </div>
+              <div className="skill-item">
+                <div className="skill-icon"><FaGitAlt /></div>
+                <div className="skill-name">Git</div>
+                <div className="skill-bar">
+                  <div className="skill-level" style={{ width: '90%' }}></div>
+                </div>
+              </div>
               </div>
             </div>
             
@@ -444,8 +564,10 @@ function App() {
               <FaTrophy />
             </div>
             <div className="achievement-content">
-              <h3>Finalist of " I AM KALAM ALL KERALA SCIENCE EXHIBITION " (2018)</h3>
-              <p>Developed a Salt Water Intrusion Prevention System</p>
+              <h3>Research Paper Submitted to IEEE GRSL (2026)</h3>
+              <p>
+                Submitted a research paper on SAR-based urban flood segmentation using a novel dual-encoder deep learning architecture to IEEE Geoscience and Remote Sensing Letters.
+              </p>
             </div>
           </div>
 
@@ -454,8 +576,10 @@ function App() {
               <FaTrophy />
             </div>
             <div className="achievement-content">
-              <h3>Finalist of " Kochi Hackathon '25 " (2025)</h3>
-              <p>Developed a Chrome extension for accessible web reading with voice control and AI-driven image descriptions.</p>
+              <h3>Finalist – Kochi Hackathon '25</h3>
+              <p>
+                Built Voxel Web Reader, an AI-powered Chrome extension featuring voice-controlled navigation and YOLO-based image descriptions to improve web accessibility.
+              </p>
             </div>
           </div>
 
@@ -464,8 +588,22 @@ function App() {
               <FaTrophy />
             </div>
             <div className="achievement-content">
-              <h3>Finalist of " Tredence Infinity AI Hackathon " (2025)</h3>
-              <p>Developed a real-time video calling application with sign language interpretation capabilities.</p>
+              <h3>Finalist – Tredence Infinity AI Hackathon 2025</h3>
+              <p>
+                Developed SignAI, a real-time AI-powered sign language interpretation system for gesture-to-text and gesture-to-speech communication.
+              </p>
+            </div>
+          </div>
+
+          <div className="achievement-item reveal">
+            <div className="achievement-icon">
+              <FaTrophy />
+            </div>
+            <div className="achievement-content">
+              <h3>Google Build with AI Bootcamp</h3>
+              <p>
+                Gained hands-on experience building AI agents, designing intelligent workflows, and integrating Generative AI into production-ready applications.
+              </p>
             </div>
           </div>
         </div>
@@ -483,35 +621,43 @@ function App() {
       </section>
       
       <section id="services" className="services">
-        <h2 className="section-title reveal">Services</h2>
-        <div className="container">
-          <div className="services-grid">
-            <div className="service-card reveal">
-              <div className="service-icon">
-                <FaCode />
-              </div>
-              <h3>Web Development</h3>
-              <p>Custom web applications built with modern technologies like React, Node.js, and Firebase. Responsive design and seamless user experience guaranteed.</p>
-            </div>
+      <h2 className="section-title reveal">Services</h2>
+      <div className="container">
+        <div className="services-grid">
 
-            <div className="service-card reveal">
-              <div className="service-icon">
-                <SiFlutter />
-              </div>
-              <h3>Mobile App Development</h3>
-              <p>Cross-platform mobile applications developed with Flutter. Native-like performance with beautiful UI and smooth animations.</p>
+          <div className="service-card reveal">
+            <div className="service-icon">
+              <FaCode />
             </div>
-
-            <div className="service-card reveal">
-              <div className="service-icon">
-                <FaPython />
-              </div>
-              <h3>AI & ML Solutions</h3>
-              <p>Machine learning models and AI-powered features integration. Data analysis and predictive modeling for smart applications.</p>
-            </div>
+            <h3>Web Development</h3>
+            <p>
+              Develop responsive, scalable web applications using React, Firebase, and modern web technologies with clean UI, seamless user experiences, and backend integration.
+            </p>
           </div>
+
+          <div className="service-card reveal">
+            <div className="service-icon">
+              <FaRobot />
+            </div>
+            <h3>Generative AI Solutions</h3>
+            <p>
+              Build intelligent AI applications powered by Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), AI agents, and cloud-based AI services for enterprise and real-world use cases.
+            </p>
+          </div>
+
+          <div className="service-card reveal">
+            <div className="service-icon">
+              <FaPython />
+            </div>
+            <h3>Machine Learning & Data Science</h3>
+            <p>
+              Design and deploy machine learning models for computer vision, predictive analytics, deep learning, and intelligent automation using Python and modern AI frameworks.
+            </p>
+          </div>
+
         </div>
-      </section>
+      </div>
+    </section>
       
       <section id="contact" className="contact">
         <h2 className="section-title">Contact Me</h2>
