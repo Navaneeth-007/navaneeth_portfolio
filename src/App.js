@@ -1,8 +1,7 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaRobot, FaMapMarkerAlt, FaGraduationCap, FaCode, FaTrophy, FaReact, FaPython, FaJava, FaDatabase, FaGitAlt, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
-import { SiMongodb, SiFirebase } from 'react-icons/si';
-import {SiPytorch, SiTensorflow, SiScikitlearn, SiLangchain, SiAmazonwebservices} from "react-icons/si";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaRobot, FaMapMarkerAlt, FaGraduationCap, FaCode, FaTrophy, FaPython, FaDatabase, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
+import {SiPytorch, SiScikitlearn, SiAmazonwebservices} from "react-icons/si";
 import emailjs from '@emailjs/browser';
 import './App.css';
 
@@ -477,37 +476,33 @@ function App() {
         <div className="container">
           <div className="skills-container">
             <div className="technical-skills reveal">
-              <h3>Technical Skills</h3>
-              <div className="skill-grid">
+              <div className="technical-skills-heading">
+                <div>
+                  <p className="skills-eyebrow">MY TOOLKIT</p>
+                  <h3>Technical Skills</h3>
+                </div>
+                <p className="skills-intro">The tools I use to build, evaluate, and ship AI applications.</p>
+              </div>
+              <div className="skill-groups">
                 {[
-                  { name: 'Python', icon: FaPython },
-                  { name: 'Java', icon: FaJava },
-                  { name: 'React', icon: FaReact },
-                  { name: 'PyTorch', icon: SiPytorch },
-                  { name: 'TensorFlow', icon: SiTensorflow },
-                  { name: 'Scikit-learn', icon: SiScikitlearn },
-                  { name: 'LangChain', icon: SiLangchain },
-                  { name: 'LangGraph', icon: FaRobot },
-                  { name: 'Generative AI & LLMs', icon: FaRobot },
-                  { name: 'RAG & Hybrid Retrieval', icon: FaDatabase },
-                  { name: 'FastAPI', icon: FaCode },
-                  { name: 'Streamlit', icon: FaCode },
-                  { name: 'AWS', icon: SiAmazonwebservices },
-                  { name: 'Amazon Bedrock', icon: SiAmazonwebservices },
-                  { name: 'PostgreSQL & pgvector', icon: FaDatabase },
-                  { name: 'SQL', icon: FaDatabase },
-                  { name: 'MongoDB', icon: SiMongodb },
-                  { name: 'Firebase', icon: SiFirebase },
-                  { name: 'Docker', icon: FaCode },
-                  { name: 'MLflow', icon: FaCode },
-                  { name: 'LightGBM & Prophet', icon: SiScikitlearn },
-                  { name: 'OpenCV & MediaPipe', icon: FaCode },
-                  { name: 'Reinforcement Learning', icon: SiPytorch },
-                  { name: 'Git', icon: FaGitAlt },
-                ].map(({ name, icon: Icon }) => (
-                  <div className="skill-item" key={name}>
-                    <div className="skill-icon"><Icon aria-hidden="true" /></div>
-                    <div className="skill-name">{name}</div>
+                  { title: 'Generative AI', description: 'From questions to grounded answers', icon: FaRobot, skills: ['Generative AI & LLMs', 'LangChain', 'LangGraph', 'RAG & Hybrid Retrieval'] },
+                  { title: 'Machine Learning', description: 'Models, forecasting & intelligent agents', icon: SiPytorch, skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Reinforcement Learning'] },
+                  { title: 'Languages & Applications', description: 'Interfaces and services built around AI', icon: FaCode, skills: ['Python', 'Java', 'React', 'FastAPI'] },
+                  { title: 'Data & Retrieval', description: 'Structured data and semantic search', icon: FaDatabase, skills: ['PostgreSQL & pgvector', 'SQL', 'MongoDB', 'Firebase'] },
+                  { title: 'Cloud & MLOps', description: 'Deploy, track and monitor', icon: SiAmazonwebservices, skills: ['AWS', 'Amazon Bedrock', 'Docker', 'MLflow'] },
+                  { title: 'Applied AI', description: 'From experiments to useful tools', icon: SiScikitlearn, skills: ['LightGBM & Prophet', 'OpenCV & MediaPipe', 'Streamlit', 'Git'] },
+                ].map(({ title, description, icon: Icon, skills }) => (
+                  <div className="skill-group" key={title}>
+                    <div className="skill-group-heading">
+                      <span className="skill-group-icon"><Icon aria-hidden="true" /></span>
+                      <div>
+                        <h4>{title}</h4>
+                        <p>{description}</p>
+                      </div>
+                    </div>
+                    <ul className="skill-badges" aria-label={title}>
+                      {skills.map(skill => <li key={skill}>{skill}</li>)}
+                    </ul>
                   </div>
                 ))}
               </div>
