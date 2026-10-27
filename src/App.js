@@ -1,6 +1,6 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaRobot, FaMapMarkerAlt, FaGraduationCap, FaCode, FaTrophy, FaPython, FaDatabase, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
+import { FaUsers, FaGlobe, FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaRobot, FaMapMarkerAlt, FaGraduationCap, FaCode, FaTrophy, FaPython, FaDatabase, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
 import {SiPytorch, SiScikitlearn, SiAmazonwebservices} from "react-icons/si";
 import emailjs from '@emailjs/browser';
 import './App.css';
@@ -510,34 +510,52 @@ function App() {
 
             <div className="bottom-row">
               <div className="soft-skills-container reveal">
-                <h3>Soft Skills</h3>
-                <div className="soft-skills">
-                  <div className="soft-skill">Leadership</div>
-                  <div className="soft-skill">Adaptability</div>
-                  <div className="soft-skill">Time Management</div>
-                  <div className="soft-skill">Self Assessment</div>
-                  <div className="soft-skill">Team Management</div>
-                  <div className="soft-skill">Problem Solving</div>
-                  <div className="soft-skill">Collaboration</div>
+                <div className="skill-group-heading">
+                  <span className="skill-group-icon"><FaUsers aria-hidden="true" /></span>
+                  <div>
+                    <h3>Soft Skills</h3>
+                    <p>How I work and collaborate.</p>
+                  </div>
+                </div>
+                <div className="people-skill-groups">
+                  {[
+                    { title: 'Working with people', skills: ['Leadership', 'Team Management', 'Collaboration'] },
+                    { title: 'Working through challenges', skills: ['Problem Solving', 'Adaptability'] },
+                    { title: 'Personal effectiveness', skills: ['Time Management', 'Self Assessment'] },
+                  ].map(({ title, skills }) => (
+                    <div className="people-skill-group" key={title}>
+                      <h4>{title}</h4>
+                      <ul className="skill-badges" aria-label={title}>
+                        {skills.map(skill => <li key={skill}>{skill}</li>)}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
               </div>
-              
+
               <div className="languages-container reveal">
-                <h3>Languages</h3>
-                <div className="languages">
-                  <div className="language">
-                    <h4>Malayalam</h4>
-                    <p>Native or Bilingual Proficiency</p>
-                  </div>
-                  <div className="language">
-                    <h4>English</h4>
-                    <p>Full Professional Proficiency</p>
-                  </div>
-                  <div className="language">
-                    <h4>Hindi</h4>
-                    <p>Professional Working Proficiency</p>
+                <div className="skill-group-heading">
+                  <span className="skill-group-icon"><FaGlobe aria-hidden="true" /></span>
+                  <div>
+                    <h3>Languages</h3>
+                    <p>Connecting across teams and cultures.</p>
                   </div>
                 </div>
+                <ul className="languages" aria-label="Language proficiency">
+                  {[
+                    { name: 'Malayalam', level: 'Native or Bilingual Proficiency', code: 'ML' },
+                    { name: 'English', level: 'Full Professional Proficiency', code: 'EN' },
+                    { name: 'Hindi', level: 'Professional Working Proficiency', code: 'HI' },
+                  ].map(({ name, level, code }) => (
+                    <li className="language" key={name}>
+                      <span className="language-code" aria-hidden="true">{code}</span>
+                      <div>
+                        <h4>{name}</h4>
+                        <p>{level}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
