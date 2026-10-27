@@ -15,7 +15,6 @@ function App() {
     message: ''
   });
   const [formStatus, setFormStatus] = useState('');
-  const [showMore, setShowMore] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -227,10 +226,10 @@ function App() {
           <div className="about-wrapper">
             <div className="about-content reveal">
               <p>
-              I am an AI/ML Engineer and Data Scientist with experience developing production-grade Generative AI applications, machine learning models, and cloud-based solutions. Currently working as a Data Science Intern at GE Aerospace, I build enterprise AI systems using Retrieval-Augmented Generation (RAG), Large Language Models, and AWS technologies to solve real-world business challenges.
+              I am an AI/ML Engineer and Data Scientist with experience developing production-grade Generative AI applications, machine learning models, and cloud-based solutions. I completed my Data Science internship at GE Aerospace, where I developed enterprise AI solutions using Retrieval-Augmented Generation (RAG), Large Language Models, and AWS technologies to address real-world business challenges.
               </p>
               <p>
-              My interests span Generative AI, Deep Learning, Computer Vision, and Intelligent Automation. Alongside industry experience, I have conducted research in SAR-based urban flood segmentation using a novel dual-encoder deep learning architecture, with my work submitted to IEEE Geoscience and Remote Sensing Letters. I enjoy transforming research into scalable, impactful AI solutions.
+              My interests span Generative AI, Deep Learning, Computer Vision, and Intelligent Automation. Alongside industry experience, I have conducted research in SAR-based urban flood segmentation using a novel dual-encoder deep learning architecture, with my work submitted to IEEE Geoscience and Remote Sensing Letters. I also hold the IBM Generative AI Engineering Professional Certificate. I enjoy transforming research into scalable, impactful AI solutions.
               </p>
               <p>
               I'm always open to opportunities in AI, Machine Learning, Data Science, and Software Engineering. Whether it's building intelligent applications, collaborating on innovative projects, or exploring emerging AI technologies, I'm excited to create solutions that make a meaningful impact.
@@ -318,11 +317,11 @@ function App() {
                 <h3>Data Science Intern</h3>
                 <h4>GE Aerospace</h4>
               </div>
-              <span className="experience-duration">Jan 2026 – Present</span>
+              <span className="experience-duration">Jan 2026 – Jul 31, 2026</span>
             </div>
 
             <p className="experience-description">
-              Contributing to enterprise AI and data science initiatives by developing intelligent automation
+              Contributed to enterprise AI and data science initiatives by developing intelligent automation
               solutions, Generative AI workflows, and forecasting systems for business operations.
             </p>
 
@@ -347,85 +346,113 @@ function App() {
           <div className="project-cards">
             <div className="project-card reveal">
               <div className="project-header">
-                <h3>SignAI - Real-time Sign Language Interpretation</h3>
-                <div className="project-tech">HTML |CSS |JavaScript |Python | Mediapipe </div>
+                <h3>AgentIQ – AI Data Analysis Agent</h3>
+                <div className="project-tech">Python | LangGraph | FastAPI | Streamlit | Docker</div>
               </div>
-              <p>
-                Developed a real-time video calling application with integrated sign language recognition using machine learning to convert gestures into text and speech.
-              </p>
+              <p>Built an AI agent that plans multi-step analyses, queries databases, and turns natural-language questions into SQL-backed findings, charts, and downloadable reports. Includes execution evidence and a credential-free demo.</p>
               <div className="project-links">
-                <a href="https://github.com/Navaneeth-007/SignAI" className="project-link">View Project</a>
+                <a
+                  href="https://github.com/Navaneeth-007/AgentIQ"
+                  className="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View AgentIQ project on GitHub"
+                >
+                  View Project
+                </a>
               </div>
             </div>
 
             <div className="project-card reveal">
               <div className="project-header">
-                <h3>SETU – GenAI Stadium Operations Assistant</h3>
-              <div className="project-tech">React | Firebase | Gemini API | Gen - AI</div>
-            </div>
-            <p>
-              Built a Generative AI-powered stadium operations assistant for the FIFA World Cup 2026 to improve crowd management, automate emergency response, and provide real-time operational insights for stadium staff and spectators.
-            </p>
-            <div className="project-links">
-            <a href="https://github.com/Navaneeth-007/Setu-Assistant" className="project-link">
-              View Project
-            </a>
-            </div>
+                <h3>DocuMind – Enterprise Document RAG</h3>
+                <div className="project-tech">Python | LangChain | PostgreSQL / pgvector | FastAPI | Streamlit</div>
+              </div>
+              <p>Built a document question-answering system combining vector and keyword search with cross-encoder reranking. Answers include source citations, with input guardrails, streaming responses, and an evaluation dashboard.</p>
+              <div className="project-links">
+                <a
+                  href="https://github.com/Navaneeth-007/Documind_RAG"
+                  className="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Documind_RAG project on GitHub"
+                >
+                  View Project
+                </a>
+              </div>
             </div>
 
             <div className="project-card reveal">
               <div className="project-header">
-                <h3>Voxel Web Reader</h3>
-                <div className="project-tech">JavaScript | HTML | CSS | Python| YOLO </div>
+                <h3>ForecastOps – Energy Forecasting &amp; MLOps</h3>
+                <div className="project-tech">Python | LightGBM | Prophet | MLflow | FastAPI | Docker</div>
               </div>
-              <p>
-                Developed an AI-powered voice-controlled web reader extension featuring YOLO-based image description to make web content more accessible for visually impaired users.
-              </p>
+              <p>Built an end-to-end energy forecasting pipeline that compares Prophet and LightGBM, tracks experiments in MLflow, and serves a versioned champion model through an API and dashboard with drift monitoring.</p>
               <div className="project-links">
-                <a href="https://github.com/Navaneeth-007/Voxel_Web_Reader" className="project-link">View Project</a>
+                <a
+                  href="https://github.com/Navaneeth-007/ForecastOps"
+                  className="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View ForecastOps project on GitHub"
+                >
+                  View Project
+                </a>
               </div>
             </div>
-          </div>
 
-          <div className={`hidden-projects ${showMore ? 'show' : ''}`}>
-          <div className="project-card reveal">
-            <div className="project-header">
-              <h3>Smart Chef – AI Recipe Assistant</h3>
-              <div className="project-tech">React | Gemini API | Firebase</div>
+            <div className="project-card reveal">
+              <div className="project-header">
+                <h3>SafeDriveRL – Risk-Aware Autonomous Driving</h3>
+                <div className="project-tech">Python | PyTorch | Gymnasium | highway-env</div>
+              </div>
+              <p>Trained and compared risk-aware and baseline driving agents using Dueling Deep Q-Networks in a highway simulation. Evaluated reward, success rate, and collision rate across traffic conditions with an ATE-inspired analysis.</p>
+              <div className="project-links">
+                <a
+                  href="https://github.com/Navaneeth-007/SafeDriveRL"
+                  className="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View SafeDriveRL project on GitHub"
+                >
+                  View Project
+                </a>
+              </div>
             </div>
-              <p>
-               Developed an AI-powered recipe assistant that generates personalized recipes based on available ingredients, dietary preferences, and cuisine choices using Generative AI.
-              </p>
-            <div className="project-links">
-              <a href="https://github.com/Navaneeth-007/Smart-Chef" className="project-link">
-                View Project
-              </a>
-            </div>
-            </div>
-          <div className="project-card reveal">
-            <div className="project-header">
-              <h3>SmartFin – AI Personal Finance Assistant</h3>
-              <div className="project-tech">Python | Flask | MongoDB | LSTM</div>
-            </div>
-            <p>
-              Built an AI-powered personal finance assistant that forecasts spending patterns using LSTM models and provides interactive dashboards for financial insights and expense analysis.
-            </p>
-            <div className="project-links">
-              <a href="https://github.com/Navaneeth-007/SmartFin" className="project-link">
-                View Project
-              </a>
-            </div>
-          </div>
-        </div>
 
+            <div className="project-card reveal">
+              <div className="project-header">
+                <h3>SignAI – Real-Time Sign Language Recognition</h3>
+                <div className="project-tech">Python | Flask | OpenCV | MediaPipe | JavaScript</div>
+              </div>
+              <p>Built a webcam-based sign language recognition application that translates gestures into text and speech. Supports continuous sentence formation, automatic spell correction, and real-time hand tracking.</p>
+              <div className="project-links">
+                <a
+                  href="https://github.com/Navaneeth-007/SignAI"
+                  className="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View SignAI project on GitHub"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
+          </div>
           <div className="view-more-container">
-            <button className="view-more-btn" onClick={() => setShowMore(!showMore)}>
-              {showMore ? 'Show Less' : 'View More Projects'}
-            </button>
+            <a
+              href="https://github.com/Navaneeth-007?tab=repositories"
+              className="view-more-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View More Projects
+            </a>
           </div>
         </div>
       </section>
-      
+
       <section id="skills" className="skills">
         <h2 className="section-title reveal">Skills</h2>
         <div className="container">
@@ -557,8 +584,26 @@ function App() {
       </section>
       
       <section id="achievements" className="achievements">
-        <h2 className="section-title reveal">Achievements</h2>
+        <h2 className="section-title reveal">Certifications &amp; Achievements</h2>
         <div className="container">
+          <div className="achievement-item reveal">
+            <div className="achievement-icon">
+              <FaGraduationCap />
+            </div>
+            <div className="achievement-content">
+              <h3>IBM Generative AI Engineering Professional Certificate</h3>
+              <p>Issued by IBM through Coursera.</p>
+              <a
+                href="https://www.coursera.org/account/accomplishments/specialization/Q3TIVX55DUQU"
+                className="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Credential
+              </a>
+            </div>
+          </div>
+
           <div className="achievement-item reveal">
             <div className="achievement-icon">
               <FaTrophy />
