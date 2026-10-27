@@ -228,7 +228,7 @@ function App() {
               I am an AI/ML Engineer and Data Scientist with experience developing production-grade Generative AI applications, machine learning models, and cloud-based solutions. I completed my Data Science internship at GE Aerospace, where I developed enterprise AI solutions using Retrieval-Augmented Generation (RAG), Large Language Models, and AWS technologies to address real-world business challenges.
               </p>
               <p>
-              My interests span Generative AI, Deep Learning, Computer Vision, and Intelligent Automation. Alongside industry experience, I have conducted research in SAR-based urban flood segmentation using a novel dual-encoder deep learning architecture, with my work submitted to IEEE Geoscience and Remote Sensing Letters. I also hold the IBM Generative AI Engineering Professional Certificate. I enjoy transforming research into scalable, impactful AI solutions.
+              My current interests include AI agents, Retrieval-Augmented Generation, MLOps, time-series forecasting, and applied research in computer vision and reinforcement learning. Alongside industry experience, I have conducted research in SAR-based urban flood segmentation using a novel dual-encoder deep learning architecture, with my work submitted to IEEE Geoscience and Remote Sensing Letters. I also hold the IBM Generative AI Engineering Professional Certificate. I enjoy transforming research into scalable, impactful AI solutions.
               </p>
               <p>
               I'm always open to opportunities in AI, Machine Learning, Data Science, and Software Engineering. Whether it's building intelligent applications, collaborating on innovative projects, or exploring emerging AI technologies, I'm excited to create solutions that make a meaningful impact.
@@ -632,14 +632,28 @@ function App() {
           </div>
         </div>
         
-        <div className="interests">
-          <h3 className="reveal">Interests</h3>
-          <div className="interest-items">
-            <div className="interest-item reveal">Travelling</div>
-            <div className="interest-item reveal">Philately</div>
-            <div className="interest-item reveal">Numismatics</div>
-            <div className="interest-item reveal">Web Development</div>
-            <div className="interest-item reveal">App Development</div>
+        <div className="container">
+          <div className="interests reveal">
+            <p className="skills-eyebrow">WHAT KEEPS ME CURIOUS</p>
+            <h3>Interests</h3>
+            <div className="interest-items">
+              {[
+                { title: 'Generative AI & Agents', icon: FaRobot, topics: ['AI Agents', 'RAG & Knowledge Retrieval', 'Intelligent Automation'] },
+                { title: 'Applied ML & Research', icon: SiPytorch, topics: ['Computer Vision', 'Reinforcement Learning', 'Time-Series Forecasting'] },
+                { title: 'AI Product Engineering', icon: FaCode, topics: ['MLOps & Evaluation', 'Cloud AI Applications', 'Web & App Development'] },
+                { title: 'Beyond Technology', icon: FaGlobe, topics: ['Travelling', 'Philately', 'Numismatics'] },
+              ].map(({ title, icon: Icon, topics }) => (
+                <div className="interest-item" key={title}>
+                  <div className="skill-group-heading">
+                    <span className="skill-group-icon"><Icon aria-hidden="true" /></span>
+                    <h4>{title}</h4>
+                  </div>
+                  <ul className="skill-badges" aria-label={title}>
+                    {topics.map(topic => <li key={topic}>{topic}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
