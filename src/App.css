@@ -656,9 +656,21 @@ section:nth-child(even) {
 /* Projects Section */
 .project-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .project-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .project-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Container for the last two projects */
@@ -781,7 +793,7 @@ section:nth-child(even) {
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 1.5rem;
 }
 
@@ -801,20 +813,6 @@ section:nth-child(even) {
   font-size: 1rem;
   font-weight: 500;
   color: var(--text);
-}
-
-.skill-bar {
-  height: 6px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.skill-level {
-  height: 100%;
-  background-color: var(--primary);
-  border-radius: 3px;
-  transition: width 1s ease-in-out;
 }
 
 .bottom-row {

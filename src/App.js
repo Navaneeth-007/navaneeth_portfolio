@@ -317,7 +317,7 @@ function App() {
                 <h3>Data Science Intern</h3>
                 <h4>GE Aerospace</h4>
               </div>
-              <span className="experience-duration">Jan 2026 – Jul 31, 2026</span>
+              <span className="experience-duration">Jan 12, 2026 – Jul 31, 2026</span>
             </div>
 
             <p className="experience-description">
@@ -439,6 +439,25 @@ function App() {
               </div>
             </div>
 
+            <div className="project-card reveal">
+              <div className="project-header">
+                <h3>SETU – GenAI Stadium Operations Assistant</h3>
+                <div className="project-tech">React | TypeScript | Gemini API | Firebase</div>
+              </div>
+              <p>Built a stadium operations prototype with AI-assisted incident triage, multilingual spectator guidance, and live crowd telemetry. Connects fan reports with an operator dashboard and Gemini-generated operational briefs.</p>
+              <div className="project-links">
+                <a
+                  href="https://github.com/Navaneeth-007/Setu-Assistant"
+                  className="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View SETU project on GitHub"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
           </div>
           <div className="view-more-container">
             <a
@@ -460,93 +479,40 @@ function App() {
             <div className="technical-skills reveal">
               <h3>Technical Skills</h3>
               <div className="skill-grid">
-                <div className="skill-item">
-                  <div className="skill-icon"><FaPython /></div>
-                  <div className="skill-name">Python</div>
-                  <div className="skill-bar">
-                  <div className="skill-level" style={{ width: '95%' }}></div>
+                {[
+                  { name: 'Python', icon: FaPython },
+                  { name: 'Java', icon: FaJava },
+                  { name: 'React', icon: FaReact },
+                  { name: 'PyTorch', icon: SiPytorch },
+                  { name: 'TensorFlow', icon: SiTensorflow },
+                  { name: 'Scikit-learn', icon: SiScikitlearn },
+                  { name: 'LangChain', icon: SiLangchain },
+                  { name: 'LangGraph', icon: FaRobot },
+                  { name: 'Generative AI & LLMs', icon: FaRobot },
+                  { name: 'RAG & Hybrid Retrieval', icon: FaDatabase },
+                  { name: 'FastAPI', icon: FaCode },
+                  { name: 'Streamlit', icon: FaCode },
+                  { name: 'AWS', icon: SiAmazonwebservices },
+                  { name: 'Amazon Bedrock', icon: SiAmazonwebservices },
+                  { name: 'PostgreSQL & pgvector', icon: FaDatabase },
+                  { name: 'SQL', icon: FaDatabase },
+                  { name: 'MongoDB', icon: SiMongodb },
+                  { name: 'Firebase', icon: SiFirebase },
+                  { name: 'Docker', icon: FaCode },
+                  { name: 'MLflow', icon: FaCode },
+                  { name: 'LightGBM & Prophet', icon: SiScikitlearn },
+                  { name: 'OpenCV & MediaPipe', icon: FaCode },
+                  { name: 'Reinforcement Learning', icon: SiPytorch },
+                  { name: 'Git', icon: FaGitAlt },
+                ].map(({ name, icon: Icon }) => (
+                  <div className="skill-item" key={name}>
+                    <div className="skill-icon"><Icon aria-hidden="true" /></div>
+                    <div className="skill-name">{name}</div>
                   </div>
-                </div>
-              <div className="skill-item">
-                <div className="skill-icon"><FaJava /></div>
-                <div className="skill-name">Java</div>
-                <div className="skill-bar">
-                <div className="skill-level" style={{ width: '80%' }}></div>
-                </div>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon"><FaReact /></div>
-                <div className="skill-name">React</div>
-                <div className="skill-bar">
-                <div className="skill-level" style={{ width: '85%' }}></div>
-                </div>
-              </div>  
-                <div className="skill-item">
-                <div className="skill-icon"><SiPytorch /></div>
-                <div className="skill-name">PyTorch</div>
-                <div className="skill-bar">
-                <div className="skill-level" style={{ width: '90%' }}></div>
-                </div>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon"><SiTensorflow /></div>
-                <div className="skill-name">TensorFlow</div>
-                <div className="skill-bar">
-                <div className="skill-level" style={{ width: '80%' }}></div>
-                </div>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon"><SiScikitlearn /></div>
-                <div className="skill-name">Scikit-learn</div>
-                <div className="skill-bar">
-                <div className="skill-level" style={{ width: '85%' }}></div>
-                </div>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon"><SiLangchain /></div>
-                <div className="skill-name">LangChain</div>
-                <div className="skill-bar">
-                <div className="skill-level" style={{ width: '90%' }}></div>
-                </div>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon"><SiAmazonwebservices /></div>
-                <div className="skill-name">AWS</div>
-                <div className="skill-bar">
-                <div className="skill-level" style={{ width: '85%' }}></div>
-                </div>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon"><FaDatabase /></div>
-                <div className="skill-name">PostgreSQL</div>
-                <div className="skill-bar">
-                <div className="skill-level" style={{ width: '85%' }}></div>
-              </div>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon"><SiMongodb /></div>
-                <div className="skill-name">MongoDB</div>
-                <div className="skill-bar">
-                <div className="skill-level" style={{ width: '80%' }}></div>
-                </div>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon"><SiFirebase /></div>
-                <div className="skill-name">Firebase</div>
-                <div className="skill-bar">
-                  <div className="skill-level" style={{ width: '80%' }}></div>
-                </div>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon"><FaGitAlt /></div>
-                <div className="skill-name">Git</div>
-                <div className="skill-bar">
-                  <div className="skill-level" style={{ width: '90%' }}></div>
-                </div>
-              </div>
+                ))}
               </div>
             </div>
-            
+
             <div className="bottom-row">
               <div className="soft-skills-container reveal">
                 <h3>Soft Skills</h3>
