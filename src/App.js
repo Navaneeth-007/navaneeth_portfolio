@@ -564,7 +564,7 @@ function App() {
       
       <section id="achievements" className="achievements">
         <h2 className="section-title reveal">Certifications &amp; Achievements</h2>
-        <div className="container">
+        <div className="container achievement-grid">
           <div className="achievement-item reveal">
             <div className="achievement-icon">
               <FaGraduationCap />
